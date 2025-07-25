@@ -1,0 +1,420 @@
+body{
+    background-color: white;
+}
+.navbar-contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: auto;
+    background-color: #8E5CF7;
+    border: 1px solid black;
+    margin-top: 20px;
+    height: 70px;
+    overflow: hidden;
+}
+.logo{
+    height: 70px;
+}
+.logo img{
+    height: 70px;
+    margin: 0;
+}
+.generos{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.generos li{
+    position: relative;
+}
+.generos a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.generos a:hover{
+    transform: translateY(-5px);
+}
+.generos a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    transform:scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.generos a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.generos{
+    display: flex;
+    gap: 30px;
+}
+.menu-toggle{
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.preciojusto{
+    display: none;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+}
+.hamburger::before,
+.hamburger::after{
+    position: relative;
+}
+.hamburger::before{
+    top: -8px;
+}
+.hamburger::after{
+    top: 5px;
+}
+@media (max-width: 768px){
+    .menu-toggle{
+        display: flex;
+    }
+    .preciojusto{
+        display: flex;
+        font-size: 1.6em;
+        font-weight: bold;
+    }
+    .generos{
+        flex-direction: column;
+        gap: 10px;
+        background-color: #8E5CF7;
+        overflow: hidden;
+        max-height: 0;
+        width: 60%;
+        margin: auto;
+        z-index: 1;
+        border: 1px solid black;
+        padding: 0 0;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        position: absolute;
+        border-radius: 15px;
+        top: 80px;
+        left: 0;
+        right: 0;
+    }
+    .generos.active{
+        max-height: 500px;
+        padding: 10px 0;
+    }
+    .generos li{
+        text-align: center;
+    }
+}
+.eslogan-contenedor{
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    height: 200px;
+    margin-top: 40px;
+    text-align: center;
+}
+.logo1 img{
+    width: 200px;
+    height: 200px;
+    background-color: #8E5CF7;
+    border-radius: 15px;
+}
+.bienvenidos{
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 99%;
+    height: 200px;
+    background-color: #8E5CF7;
+    border-radius: 15px;
+}
+.eslogan{
+    display: block;
+    height: 200px;
+    width: 325px;
+    margin-left: 10px;
+    background-color: #8E5CF7;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 15px;
+}
+.esloganpequeño{
+  display: none;
+}
+@media (max-width: 768px) {
+  .eslogan-contenedor {
+    display: none;
+  }
+  .esloganpequeño{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    text-align: center;
+    background-color: #8E5CF7;
+    margin: 40px;
+  }
+}
+.carrito{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #8E5CF7;
+    color: #8E5CF7;
+    font-size: 30px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+.carrito:hover{
+    transform: scale(1.1);
+}
+.carousel{
+    width: 90%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+}
+.carousel-container{
+    position: relative;
+}
+.carousel-track{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+.carousel-slide{
+    min-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+.carousel-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 20%;
+    transition: background 0.3s ease;
+}
+.carousel-btn:hover{
+    background: rgba(0, 0, 0, 0.7);
+}
+.carousel-btn.prev{
+    left: 15px;
+}
+.carousel-btn.next{
+    right: 15px;
+}
+.titulo-top{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #8E5CF7;
+    border-radius: 15px;
+}
+.top-juegos{
+    display: grid;
+    grid-template-columns:repeat(3,1fr) ;
+    gap: 40px;
+}
+.top-juegos a{
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.top-juegos img{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.top-juegos a:hover img{
+    transform: scale(1.05);
+}
+.novedades-tendencias ul{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.titulo-novten{
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+    background-color: #8E5CF7;
+    border-radius: 15px;
+}
+.novedades-tendencias a{
+    color: #000;
+}
+.novedades-tendencias li{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #8E5CF7;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding-right: 5px;
+}
+.novedades-tendencias img{
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+}
+.descuento{
+    background-color: greenyellow;
+    height: 40px;
+    width: 40px;
+    font-size: 1.0em;
+    margin: 0;
+    border-radius: 50%;
+    padding: 10px 10px ;
+}
+.vermas{
+    display: none;
+}
+.categoria{
+    display: flex;
+}
+@media (max-width: 768px) {
+  .novedades-tendencias {
+    width: 96%;
+    margin: auto;
+  }
+  .vermas{
+    display: flex;
+  }
+  .categoria{
+    display: none;
+  }
+}
+.body2{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000, #8E5CF7, #000);
+}
+.titulodesesion{
+    position: absolute;
+    top: 30px;
+    text-align: center;
+    color: black;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.titulodesesion img{
+    width: 100px;
+    height: 100px;
+}
+.box-sesion{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    text-align: center;
+    gap: 20px;
+    border: 10px solid #8E5CF7;
+}
+.box-sesion input{
+    background-color: white;
+    border: 4px solid #8E5CF7;
+    font-weight: bold;
+}
+.box-sesion button{
+    background-color: white;
+    border: 4px solid #8E5CF7;
+    font-weight: bold;
+}
+.footer {
+  background-color: #000;
+  color: #8E5CF7;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+.footer a{
+    color: #8E5CF7;
+}
+.titulo-generos{
+    background-color: #8E5CF7;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.titulo-generos p{
+    font-size: 3.5em;
+    text-align: center;
+    overflow: hidden;
+}
+.juegos-accion{
+    display: grid;
+    grid-template-columns:repeat(5,1fr) ;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.juegos-accion a{
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.juegos-accion img{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.juegos-accion a:hover img{
+    transform: scale(1.05);
+}
